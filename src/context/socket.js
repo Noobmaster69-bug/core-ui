@@ -1,9 +1,9 @@
 import { createContext } from "react";
 import io from "socket.io-client";
 import { useState, useEffect, useContext } from "react";
-const Performance = createContext();
-export const usePerformance = () => useContext(Performance);
-export function PerformanceProvider({ children }) {
+const Socket = createContext();
+export const useSocket = () => useContext(Socket);
+export function SocketProvider({ children }) {
   const [performance, setPerformance] = useState({
     ram: 0,
     cpu: 0,
@@ -11,10 +11,10 @@ export function PerformanceProvider({ children }) {
     upload: [],
     download: [],
   });
+  const [log, setLog] = useState([]);
   useEffect(() => {
     const socket = io();
     socket.on("connect", () => {
-      socket.emit("performance");
       socket.on("performance", (msg) => {
         setPerformance((data) => {
           let tmp = data;
@@ -33,10 +33,15 @@ export function PerformanceProvider({ children }) {
           return { ...tmp, ...msg };
         });
       });
+      socket.on("__log", (msg) => {
+        setLog((log) => {
+          return [...log, msg];
+        });
+      });
     });
     return () => {
       socket.removeAllListeners();
     };
   }, []);
-  return <Performance.Provider value={performance} children={children} />;
+  return <Socket.Provider value={{ performance, log }} children={children} />;
 }

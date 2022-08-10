@@ -1,0 +1,22 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  .header {
+    padding-left: 16px;
+    padding-top: 16px;
+    width: 100%;
+    height: fit-content;
+  }
+  .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    .chart {
+      width: 100%;
+      display: flex;
+    }
+  }
+}

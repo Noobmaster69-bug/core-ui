@@ -9,11 +9,11 @@ import "reactjs-popup/dist/index.css";
 import "styles/index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { PerformanceProvider } from "context";
+import { SocketProvider } from "context";
 const queryClient = new QueryClient();
 ReactDOM.render(
   <React.StrictMode>
-    <PerformanceProvider>
+    <SocketProvider>
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <App />
@@ -21,7 +21,7 @@ ReactDOM.render(
         <ReactQueryDevtools initialIsOpen />
         <ToastContainer />
       </QueryClientProvider>
-    </PerformanceProvider>
+    </SocketProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

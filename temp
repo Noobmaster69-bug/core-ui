@@ -1,0 +1,6 @@
+<div className="{style.cell122}">
+  <div className="{style.message}">
+    <h2>Activity Issue</h2>
+    <div className="{style.log}"></div>
+  </div>
+</div>

@@ -9,20 +9,9 @@
     height: 100%;
     display: flex;
     padding-bottom: 8px;
-    flex-direction: column;
-    .Chart {
-      width: 100%;
+    .col1 {
       height: 100%;
-      display: flex;
-      div {
-        width: 100%;
-        background-color: white;
-      }
-    }
-    .row1Header {
-      padding-left: 16px;
-      padding-top: 16px;
-      background-color: white;
+      width: 100%;
     }
   }
   .row2 {
@@ -35,66 +24,18 @@
     .col3 {
       width: 100%;
       height: 100%;
-      .content {
-        background-color: white;
-        width: 100%;
-        height: 100%;
-        padding: 16px;
-      }
     }
     .col1 {
       padding-right: 8px;
       display: flex;
       flex-direction: column;
-      .cell121 {
+      .row1 {
         height: 100%;
         padding-bottom: 8px;
-        .devices {
-          height: 100%;
-          background-color: white;
-          display: flex;
-          padding: 16px;
-          flex-direction: column;
-          .deviceStatus {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            div {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              width: 100%;
-              height: 100%;
-            }
-            padding-top: 16px;
-          }
-        }
       }
-      .cell122 {
+      .row2 {
         padding-top: 8px;
         height: 100%;
-        .message {
-          height: 100%;
-          background-color: white;
-          display: flex;
-          padding: 16px;
-          flex-direction: column;
-          .log {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            div {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              width: 100%;
-              height: 100%;
-            }
-            padding-top: 16px;
-          }
-        }
       }
     }
     .col2 {
@@ -105,18 +46,4 @@
       padding-left: 8px;
     }
   }
-}
-.networkChart {
-  height: 50%;
-}
-.networkInfo {
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  // align-items: center;
-}
-.system {
-  padding-top: 10px;
-  height: 100%;
 }
